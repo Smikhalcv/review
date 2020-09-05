@@ -19,7 +19,7 @@ def product_view(request, pk):
     template = 'app/product_detail.html'
     product = get_object_or_404(Product, id=pk)
     if 'reviewed_products' not in request.session:
-        request.session['reviewed_products'] = {}     # create list into session
+        request.session['reviewed_products'] = []    # create list into session
     form = ReviewForm
     context = {
         'form': form,
